@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Spartan';  
-  src: url('../assets/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+  src: url('assets/fonts/LeagueSpartan-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -92,7 +92,7 @@ nav ul{
 
 #hero{
 
-  background-image: url(../assets/images/HeroBanner.jpg);
+  background-image: url(assets/images/HeroBanner.jpg);
   background-size: cover;        
   background-repeat: no-repeat;   
   width: 100%;                   
@@ -177,7 +177,7 @@ nav ul{
 
   height: 70vh;
   width: 100%;
-  background-image: url(../assets/images/QuienesSomosBanner.jpg);
+  background-image: url(assets/images/QuienesSomosBanner.jpg);
   background-size: cover;        
   background-repeat: no-repeat;  
   display: flex;
