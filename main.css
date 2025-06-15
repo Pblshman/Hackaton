@@ -299,3 +299,55 @@ nav ul{
   font-weight: 200;
 
 }
+
+footer{
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 25vh;
+  padding: 5vh 5vw;
+  gap: 10px;
+
+}
+
+#presentacionFooter{
+
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+#presentacionFooter p{
+
+  font-size: 25px;
+
+}
+
+#footerIconoValleEnergy{
+
+  width: 35px;
+  height: 35px;
+
+}
+
+#redesSocialesFooter{
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+#redesSocialesFooter p{
+
+  font-size: 20px;
+
+}
+
+.iconosRedes{
+
+  width: 35px;
+  height: 35px;
+
+}
