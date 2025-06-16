@@ -1,4 +1,27 @@
-function crearResultado() {
+function crearResultado(estrato, consumo, csv) {
+
+    const eficienciaPanel = 0.1;
+
+    const csvFile = csv.files[0];
+    const reader = new FileReader();
+    reader.readAsText(csvFile);
+
+    reader.onload = function(event){
+
+        const text = event.target.result; 
+        const lines = text.split('\n');
+        const headers = lines[0].split(',');
+        const data = lines.slice(1).map(line => {
+        const lineData = line.split(',');
+        return headers.reduce((obj, head, i) => {
+            obj[head] = lineData[i];
+            return obj;
+        }, {});
+        });
+
+        console.log(data)
+
+    }
 
     const sectionVentana = document.getElementById('simulacionSection');
 
@@ -1225,8 +1248,31 @@ const data = [
     }
 ]
 
+const selectEstrato = document.getElementById('estrato');
+const inputConsumo = document.getElementById('consumoMensualPromedio');
 const selectDepartamento = document.getElementById('departamento');
 const selectMunicipio = document.getElementById('municipio');
+const csvInput = document.getElementById('datos');
+const botonAceptar = document.getElementById('botonAceptar');
+
+botonAceptar.addEventListener('click', function(event){
+
+    event.preventDefault();  // <-- This stops the page from refreshing
+
+
+    if(selectEstrato.value != '' && 
+    inputConsumo.value != "" && 
+    selectDepartamento.value != '' && 
+    selectMunicipio.value != '' &&
+    csvInput.files.length > 0
+    ){
+
+        crearResultado(selectEstrato.value, inputConsumo, csvInput)
+
+    }
+
+})
+
 
 data.forEach(dato =>{
 
@@ -1257,4 +1303,3 @@ selectDepartamento.addEventListener('change', function(){
 
 })
 
-crearResultado();
