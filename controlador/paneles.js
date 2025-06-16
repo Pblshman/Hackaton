@@ -1,6 +1,7 @@
 function crearResultado() {
 
     const sectionVentana = document.getElementById('simulacionSection');
+
     const ventana = document.createElement("div");
     ventana.style.backgroundColor = 'white';
     ventana.style.position = 'absolute';
@@ -28,6 +29,12 @@ function crearResultado() {
     cerrar.style.width = '35px';
     cerrar.style.height = '35px';
     cerrar.style.cursor = 'pointer';
+    cerrar.addEventListener('click', function() {
+
+        ventana.remove();
+
+    });
+
 
     cerrarDiv.appendChild(cerrar);
     ventana.appendChild(cerrarDiv);
