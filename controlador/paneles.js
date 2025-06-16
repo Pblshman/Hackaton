@@ -1,3 +1,55 @@
+function crearResultado() {
+
+    const sectionVentana = document.getElementById('simulacionSection');
+    const ventana = document.createElement("div");
+    ventana.style.backgroundColor = 'white';
+    ventana.style.position = 'absolute';
+    ventana.style.width = '80vw';
+    ventana.style.height = '80vh';
+    ventana.style.border = '2px solid #ccc';
+    ventana.style.borderRadius = '12px';
+    ventana.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+    ventana.style.display = 'grid';
+    ventana.style.gridTemplateRows = '25% 1fr';
+
+    const cerrarDiv = document.createElement("div");
+    cerrarDiv.style.display = 'flex';
+    cerrarDiv.style.justifyContent = 'center';
+    cerrarDiv.style.alignItems = 'center';
+    cerrarDiv.style.width = '35px';
+    cerrarDiv.style.height = '35px';
+    cerrarDiv.style.position = 'absolute';
+    cerrarDiv.style.top = '30px';
+    cerrarDiv.style.right = '30px';
+
+    const cerrar = document.createElement('img');
+    cerrar.src = '../assets/images/CerrarIcono.png';
+    cerrar.alt = 'CerrarBoton';
+    cerrar.style.width = '35px';
+    cerrar.style.height = '35px';
+    cerrar.style.cursor = 'pointer';
+
+    cerrarDiv.appendChild(cerrar);
+    ventana.appendChild(cerrarDiv);
+
+    const tituloDiv = document.createElement("div");
+    tituloDiv.style.display = 'flex';
+    tituloDiv.style.justifyContent = 'center';
+    tituloDiv.style.alignItems = 'center';
+
+    const titulo = document.createElement('h6');
+    titulo.style.textAlign = 'center';
+    titulo.textContent = 'RESULTADOS';
+    titulo.style.fontSize = '22px';
+    titulo.style.fontWeight = '700';
+
+    tituloDiv.appendChild(titulo);
+
+    ventana.appendChild(tituloDiv)
+    sectionVentana.appendChild(ventana);
+
+}
+
 const data = [
     {
         "departamento": "Antioquia",
@@ -1198,3 +1250,4 @@ selectDepartamento.addEventListener('change', function(){
 
 })
 
+crearResultado();
